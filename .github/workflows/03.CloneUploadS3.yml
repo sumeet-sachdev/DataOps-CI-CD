@@ -1,0 +1,19 @@
+name: Fresh machine, Clone Git Repo, AWS S3, 
+on:
+    push:
+        branches: [main]
+jobs:
+    JobForClone:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Cloning Current Repo
+              uses: actions/checkout@v3
+            - name: Lets Confirm
+              run: |
+                    ls $pwd
+                    ls ~
+
+    Job2FromWindows:
+        runs-on: windows-latest
+        steps:
+            - run: echo "Detected event is ${{ github.event_name }} "
