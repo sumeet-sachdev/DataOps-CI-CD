@@ -1,0 +1,16 @@
+name: Multiple OS Build, Tests
+on:
+    push:
+        branches: [master, main]
+    pull_request:
+        branches: [main]
+jobs:
+    Job1FromUbuntu:
+        runs-on: ubuntu-latest
+        steps:
+            # - run: echo "Welcome to ${{ runner.os }}"
+            - run: echo "Detected event is ${{ github.event_name }} "
+    Job2FromWindows:
+        runs-on: windows-latest
+        steps:
+            - run: echo "Detected event is ${{ github.event_name }} "
